@@ -1,0 +1,24 @@
+.container-products {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.product { 
+    border: 1px solid grey;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.align-paginate{   
+    text-align: center;
+}
+
+.align-user{   
+    text-align: right;
+}
+
+body{
+    background-color:bisque;
+}

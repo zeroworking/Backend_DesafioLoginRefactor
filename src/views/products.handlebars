@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/css/products.css">
+<div class="container">
+    <div class="align-user">Bienvenido! <b>{{user.name}}</b>  || Email : {{user.email}} || Edad : {{user.age}} || Nivel de Acceso : <b>{{user.admin}}</b>
+    <button class="btn btn-danger" onclick="Logout('{{user.name}}')">Cerrar Sesión</button>
+    </div>
+    <hr>
+    <h1 class="prueba">Listado de Productos</h1>
+    {{#if isValid}}
+    <div class="container-products">
+        {{#each docs}}
+            <div class="product">
+                Título: {{this.title}}<br>
+                Descripción: {{this.description}}<br>
+                Código: {{this.code}}<br>
+                Precio: {{this.price}}<br>
+                Stock: {{this.stock}}<br>
+                Categoría: {{this.category}}<br>
+                Imágenes: {{this.thumbnails}}<br>
+                Estado: {{this.status}}
+                <br><br>
+                <div><button class="btn btn-primary" onclick="AgregarProductoACarro('{{this.id}}')">Agregar al Carro</button></div>
+            </div>
+        {{/each}}
+    </div>
+    <hr>
+    <div class="align-paginate">
+        {{#if hasPrevPage}}
+            <a href={{this.prevLink}}>
+                << Anterior </a>
+                {{/if}}
+                    {{!-- numero de pagina --}}
+                    &nbsp;
+                    {{this.page}}
+                    &nbsp;
+                {{#if hasNextPage}}
+                    <a href={{this.nextLink}}>
+                    Siguiente >> </a>
+                {{/if}}
+    </div>
+    {{else}}
+        <h1>No hay productos para mostrar</h1>
+    {{/if}}
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js"></script>
+
+
+
+
+
+
+
+
+

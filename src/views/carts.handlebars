@@ -1,0 +1,21 @@
+<div class="container">
+  <p><h1>LISTADO DE PRODUCTOS DEL CARRO</h1></p>
+  <hr>
+  <div>
+        {{#each products}}
+            <div>           
+                <div>Título: {{this.product.title}}<br>
+                Descripción: {{this.product.description}}<br>
+                Código: {{this.product.code}}<br>
+                Precio: {{this.product.price}}<br>
+                Stock: {{this.product.stock}}<br>
+                Categoría: {{this.product.category}}<br>
+                Imágenes: {{this.product.thumbnails}}<br>
+                Estado: {{this.product.status}} </div> 
+                <br>
+                Cantidad: {{this.quantity}}                  
+            </div>
+        <hr>
+        {{/each}}
+    </div>
+</div>
